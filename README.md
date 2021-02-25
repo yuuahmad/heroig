@@ -1,16 +1,21 @@
 # heroig
 
-A new Flutter project.
+ini adalah aplikasi yang saya buat untuk membantu tugas akhir kating saya. semoga dengan adanya proyek ini saya mendapatkan ilmu lebih tentang flutter dan segala hal yang ada dibaliknya.
 
-## Getting Started
+rencananya aplikasi heroig ini akan dibackup dengan backend yang telah dibuat oleh bang fandilla backendnya sendiri akan menggunakan bahasa pemrograman php.
 
-This project is a starting point for a Flutter application.
+## Panduan Memulai
 
-A few resources to get you started if this is your first Flutter project:
+repo ini adalah repo kosongan. artinya dependensinya mungkin akan berbeda dengan yang ada di laptop selain laptop saya. untuk itu sebelum melakukan running pada aplikasi ini, terlebih dahulu lakukan update depepndensi
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+update flutter dependensi dengan ketik diterminal => flutter pub get.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+agar dapat memahami bagaimana cara menggunakan flutter, dapat dielajari di [online documentation](https://flutter.dev/docs).
+
+## Apa Yang Telah Saya Buat
+
+pada repo ini saya telah membuat beberapa hal diantaranya adalah:
+1. membuat routes untuk tiap masing masing halaman
+2. membuat halaman utama dapat pergi ke beberapa sub halaman
+3. membuat drawer
+4. membuat tombol kembali yang ada di pojok kiri atas tiap-tiap sub halaman
