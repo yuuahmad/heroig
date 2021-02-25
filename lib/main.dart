@@ -5,8 +5,6 @@ import 'dart:async';
 import 'dart:io' show Platform;
 
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_database/firebase_database.dart';
-import 'package:firebase_database/ui/firebase_animated_list.dart';
 
 import 'package:flutter/material.dart';
 import 'package:heroig/HalamanUtama.dart';
@@ -17,18 +15,22 @@ Future<void> main() async {
     name: 'db2',
     options: Platform.isIOS || Platform.isMacOS
         ? FirebaseOptions(
-            appId: '1:297855924061:ios:c6de2b69b03a5be8',
-            apiKey: 'AIzaSyD_shO5mfO9lhy2TVWhfo1VUmARKlG4suk',
-            projectId: 'flutter-firebase-plugins',
-            messagingSenderId: '297855924061',
-            databaseURL: 'https://flutterfire-cd2f7.firebaseio.com',
+            appId:
+                '1:497685752739:ios:2ffb356f1c26a030428816', //ini sudah saya ganti
+            apiKey: 'AIzaSyBhmPyJxIr7NPbYFwFlsZ1pPr33c8jkwBg', //ganti
+            projectId: 'heroigitera', //ini sudah saya ganti
+            messagingSenderId: '497685752739', //ini sudah saya ganti
+            databaseURL:
+                'https://heroigitera-default-rtdb.firebaseio.com/', //ini sudah saya ganti
           )
         : FirebaseOptions(
-            appId: '1:297855924061:android:669871c998cc21bd',
-            apiKey: 'AIzaSyD_shO5mfO9lhy2TVWhfo1VUmARKlG4suk',
-            messagingSenderId: '297855924061',
-            projectId: 'flutter-firebase-plugins',
-            databaseURL: 'https://flutterfire-cd2f7.firebaseio.com',
+            appId:
+                '1:497685752739:android:93ab3a7bef37b2ed428816', //ini sudah saya ganti
+            apiKey: 'AIzaSyBhmPyJxIr7NPbYFwFlsZ1pPr33c8jkwBg', //ganti
+            messagingSenderId: '497685752739', //ini sudah saya ganti
+            projectId: 'heroigitera', //ini sudah saya ganti
+            databaseURL:
+                'https://heroigitera-default-rtdb.firebaseio.com/', //ini sudah saya ganti
           ),
   );
   runApp(AplikasiSaya());
