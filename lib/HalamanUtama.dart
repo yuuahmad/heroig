@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:heroig/HalamanDaftarPompa.dart';
-import 'package:heroig/HalamanLogin.dart';
+import 'package:heroig/BarNilai.dart';
 import 'package:heroig/KontrolAlat.dart';
 import 'package:heroig/MonitoringAlat.dart';
 
@@ -45,26 +44,6 @@ class _HalamanUtamaState extends State<HalamanUtama> {
                     Navigator.push(
                         context,
                         new MaterialPageRoute(
-                            builder: (context) => HalamanLogin()));
-                  },
-                  leading: Icon(Icons.account_circle_outlined),
-                  title: Text('Login'),
-                ),
-                ListTile(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        new MaterialPageRoute(
-                            builder: (context) => HalamanTambahPompa()));
-                  },
-                  leading: Icon(Icons.add),
-                  title: Text('Daftarkan Pompa'),
-                ),
-                ListTile(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        new MaterialPageRoute(
                             builder: (context) => KontrolAlat()));
                   },
                   leading: Icon(Icons.api),
@@ -79,6 +58,16 @@ class _HalamanUtamaState extends State<HalamanUtama> {
                   },
                   leading: Icon(Icons.tv),
                   title: Text('Monitoring Alat'),
+                ),
+                ListTile(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                            builder: (context) => BarNilai()));
+                  },
+                  leading: Icon(Icons.bar_chart),
+                  title: Text('Bar Nilai'),
                 ),
               ],
             ),
@@ -96,8 +85,7 @@ class _HalamanUtamaState extends State<HalamanUtama> {
                 Padding(
                   padding: const EdgeInsets.all(30.0),
                   child: Container(
-                    child: Text(
-                        'lakukan login dan pendaftaran pompa untuk mulai menggunakan aplikasi heroig'),
+                    child: Text(''),
                   ),
                 )
               ],

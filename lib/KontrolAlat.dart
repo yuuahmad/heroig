@@ -30,11 +30,15 @@ class _KontrolAlatState extends State<KontrolAlat> {
   void initState() {
     super.initState();
     // Demonstrates configuring to the database using a file
-    _counterRef = FirebaseDatabase.instance.reference().child('counter');
+    _counterRef = FirebaseDatabase.instance.reference().child('counter/nilai');
     // Demonstrates configuring the database directly
     final FirebaseDatabase database = FirebaseDatabase(app: widget.app);
     _messagesRef = database.reference().child('messages');
-    database.reference().child('counter').once().then((DataSnapshot snapshot) {
+    database
+        .reference()
+        .child('counter/nilai')
+        .once()
+        .then((DataSnapshot snapshot) {
       print('Connected to second database and read ${snapshot.value}');
     });
     database.setPersistenceEnabled(true);
