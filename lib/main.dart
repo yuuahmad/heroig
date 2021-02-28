@@ -1,10 +1,14 @@
 // ini adalah kode main pada aplikasi heroig
 // kode ini digunakan untuk melakukan routing atau pindah2 halaman
 // koe ini adalah kode utama yang memuat semua anak halaman
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:heroig/HalamanUtama.dart';
 
-main(List<String> args) {
+main(List<String> args) async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(AplikasiSaya());
 }
 

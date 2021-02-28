@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:heroig/Authen.dart';
 import 'package:heroig/BarNilai.dart';
+import 'package:heroig/Barcode.dart';
 import 'package:heroig/KontrolAlat.dart';
 import 'package:heroig/MonitoringAlat.dart';
 
@@ -68,6 +70,24 @@ class _HalamanUtamaState extends State<HalamanUtama> {
                   },
                   leading: Icon(Icons.bar_chart),
                   title: Text('Bar Nilai'),
+                ),
+                ListTile(
+                  onTap: () {
+                    Navigator.push(context,
+                        new MaterialPageRoute(builder: (context) => Barcode()));
+                  },
+                  leading: Icon(Icons.bar_chart),
+                  title: Text('Barcode'),
+                ),
+                ListTile(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                            builder: (context) => AuthExampleApp()));
+                  },
+                  leading: Icon(Icons.bar_chart),
+                  title: Text('autentifikasi'),
                 ),
               ],
             ),

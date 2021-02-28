@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
-class BarNilai extends StatelessWidget {
+class BarNilai extends StatefulWidget {
   const BarNilai({Key key}) : super(key: key);
+
+  @override
+  _BarNilaiState createState() => _BarNilaiState();
+}
+
+class _BarNilaiState extends State<BarNilai> {
+  List<double> barsatu = [100, 23, 10];
 
   @override
   Widget build(BuildContext context) {
@@ -12,12 +19,12 @@ class BarNilai extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            ListSaya('pertama', 100),
-            ListSaya('kedua', 10),
-            ListSaya('ketiga', 20),
-            ListSaya('keempat', 200),
-            ListSaya('kelima', 189),
-            ListSaya('keenam', 10),
+            ListSaya('pertama', 100, 200, 300),
+            ListSaya('kedua', 10, 23, 100),
+            ListSaya('ketiga', 20, 300, 50),
+            ListSaya('keempat', 200, 100, 10),
+            ListSaya('kelima', 189, 90, 200),
+            ListSaya('keenam', 10, 234, 25),
           ],
         ),
       ),
@@ -26,13 +33,15 @@ class BarNilai extends StatelessWidget {
 }
 
 class ListSaya extends StatelessWidget {
-  final double nilailebar;
+  final double nilaiMin;
+  final double nilaiRat;
+  final double nilaiMax;
   final menit;
-  ListSaya(this.menit, this.nilailebar);
+  ListSaya(this.menit, this.nilaiMin, this.nilaiRat, this.nilaiMax);
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 5),
+      margin: EdgeInsets.all(5),
       alignment: Alignment.center,
       height: 150,
       color: Colors.blueAccent,
@@ -40,7 +49,7 @@ class ListSaya extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'bar nilai pada menit $menit',
+            'bar nilai pada sepuluh menit $menit',
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
           Text(
@@ -52,7 +61,7 @@ class ListSaya extends StatelessWidget {
           ),
           Container(
             height: 10,
-            width: nilailebar,
+            width: nilaiMin,
             color: Colors.red,
           ),
           Text(
@@ -61,7 +70,7 @@ class ListSaya extends StatelessWidget {
           ),
           Container(
             height: 10,
-            width: nilailebar,
+            width: nilaiRat,
             color: Colors.orange,
           ),
           Text(
@@ -70,7 +79,7 @@ class ListSaya extends StatelessWidget {
           ),
           Container(
             height: 10,
-            width: nilailebar,
+            width: nilaiMax,
             color: Colors.green,
           )
         ],
