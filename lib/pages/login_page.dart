@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:heroig/pages/auth_services.dart';
 import 'package:provider/provider.dart';
 
@@ -10,32 +11,64 @@ class Masuk extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Halaman Login'),
+        centerTitle: true,
         elevation: 0,
       ),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              TextField(
-                controller: emailController,
-                decoration: InputDecoration(
-                  labelText: "Email",
+              Card(
+                margin: EdgeInsets.all(20),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(16),
+                      child: TextField(
+                        controller: emailController,
+                        decoration: InputDecoration(
+                          labelText: "Email",
+                        ),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(16),
+                      child: TextField(
+                        obscureText: true,
+                        controller: passwordController,
+                        decoration: InputDecoration(
+                          labelText: "Password",
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(15),
+                      child: RaisedButton(
+                        onPressed: () {
+                          context.read<AuthServices>().signIn(
+                                email: emailController.text.trim(),
+                                password: passwordController.text.trim(),
+                              );
+                        },
+                        child: Text("Sign in"),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              TextField(
-                controller: passwordController,
-                decoration: InputDecoration(
-                  labelText: "Password",
-                ),
+              Container(
+                margin: EdgeInsets.fromLTRB(0, 20, 0, 10),
+                child: Text('Atau Login Menggunakan Google'),
               ),
-              RaisedButton(
-                onPressed: () {
-                  context.read<AuthServices>().signIn(
-                        email: emailController.text.trim(),
-                        password: passwordController.text.trim(),
-                      );
-                },
-                child: Text("Sign in"),
+              Container(
+                child: SignInButton(
+                  Buttons.GoogleDark,
+                  onPressed: () {
+                    context.read<AuthServices>().signInWithGoogle();
+                  },
+                  text: 'Masuk',
+                ),
               )
             ],
           ),

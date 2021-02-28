@@ -1,15 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthServices {
   final FirebaseAuth _firebaseAuth;
   AuthServices(this._firebaseAuth);
 
-  /// Changed to idTokenChanges as it updates depending on more cases.
   Stream<User> get authStateChanges => _firebaseAuth.idTokenChanges();
 
-  /// This won't pop routes so you could do something like
-  /// Navigator.of(context).pushNamedAndRemoveUntil('/', (Route<dynamic> route) => false);
-  /// after you called this method if you want to pop all routes.
   Future<void> signOut() async {
     await _firebaseAuth.signOut();
   }
@@ -31,6 +29,32 @@ class AuthServices {
       return "Signed up";
     } on FirebaseAuthException catch (e) {
       return e.message;
+    }
+  }
+
+  Future<void> signInWithGoogle() async {
+    try {
+      UserCredential userCredential;
+
+      if (kIsWeb) {
+        GoogleAuthProvider googleProvider = GoogleAuthProvider();
+        userCredential = await _firebaseAuth.signInWithPopup(googleProvider);
+      } else {
+        final GoogleSignInAccount googleUser = await GoogleSignIn().signIn();
+        final GoogleSignInAuthentication googleAuth =
+            await googleUser.authentication;
+        final GoogleAuthCredential googleAuthCredential =
+            GoogleAuthProvider.credential(
+          accessToken: googleAuth.accessToken,
+          idToken: googleAuth.idToken,
+        );
+        userCredential =
+            await _firebaseAuth.signInWithCredential(googleAuthCredential);
+      }
+      final user = userCredential.user;
+      print("berhasil masuk dengan nama user $user");
+    } catch (e) {
+      print(e);
     }
   }
 }
