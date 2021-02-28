@@ -4,18 +4,17 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_builder.dart';
-
-import './register_page.dart';
-import './signin_page.dart';
+import 'register_page.dart';
+import 'signin_page.dart';
 
 /// The entry point of the application.
 ///
-/// Returns a [MaterialApp].
+/// Returns a MaterialApp.
 class AuthExampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Firebase Example App',
+      title: 'Halaman Masuk Heroig',
       theme: ThemeData.dark(),
       home: Scaffold(
         body: AuthTypeSelector(),
@@ -37,11 +36,17 @@ class AuthTypeSelector extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Firebase Example App'),
+        title: const Text('Halaman Masuk Heroig'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          Container(
+            padding: const EdgeInsets.all(16),
+            alignment: Alignment.center,
+            child: Text(
+                'selamat datang di heroig\n\ndaftar atau masuk pada halaman dibawah ini'),
+          ),
           Container(
             padding: const EdgeInsets.all(16),
             alignment: Alignment.center,
