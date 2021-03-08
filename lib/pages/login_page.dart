@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'package:heroig/pages/auth_services.dart';
 import 'package:provider/provider.dart';
+import 'package:heroig/services/auth_services.dart';
 
 class Masuk extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
@@ -44,7 +44,7 @@ class Masuk extends StatelessWidget {
                     ),
                     Container(
                       margin: EdgeInsets.all(15),
-                      child: RaisedButton(
+                      child: ElevatedButton(
                         onPressed: () {
                           context.read<AuthServices>().signIn(
                                 email: emailController.text.trim(),

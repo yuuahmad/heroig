@@ -34,23 +34,24 @@ dependencies:
   google_sign_in: ^4.5.9
   firebase_dynamic_links: ^0.7.0+1
   firebase_analytics: ^7.0.1
-
   permission_handler: ^5.1.0+2
   image_gallery_saver: ^1.6.8
   image_picker: ^0.6.7+22
   qrscan: ^0.2.22
-
   provider: ^4.3.3
-
+  syncfusion_flutter_gauges: ^18.4.44
+  http: ^0.12.2
 
 
 dev_dependencies:
-  drive: 0.0.1-6.0.pre
   flutter_test:
     sdk: flutter
-  http: ^0.12.2
-  test: any
+  flutter_launcher_icons: ^0.8.1
 
+
+flutter_icons:
+  android: true
+  image_path: "icons/heroig.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

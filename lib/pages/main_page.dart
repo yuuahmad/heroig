@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:heroig/pages/apisaya_page.dart';
+import 'package:heroig/pages/control_page.dart';
+import 'package:heroig/pages/latapi_page.dart';
+import 'package:heroig/pages/monitor_page.dart';
 import 'package:heroig/pages/scan_page.dart';
-import 'auth_services.dart';
+import 'package:heroig/pages/statistics_page.dart';
+
 import 'package:provider/provider.dart';
+import 'package:heroig/services/auth_services.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -19,13 +25,7 @@ class _HomeState extends State<Home> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("ini halaman utama"),
-            RaisedButton(
-              onPressed: () {
-                context.read<AuthServices>().signOut();
-              },
-              child: Text("Sign out"),
-            ),
+            Text("selamat datang di halaman utama\n\nheroig app"),
           ],
         ),
       ),
@@ -39,24 +39,48 @@ class _HomeState extends State<Home> {
           children: <Widget>[
             _createHeader(),
             _createDrawerItem(
-                icon: Icons.contacts,
-                text: 'Contacts',
+                icon: Icons.camera,
+                text: 'Scan Alat',
                 onTap: () {
                   _pushPage(context, Scan());
                 }),
             _createDrawerItem(
-                icon: Icons.event,
-                text: 'Events',
+                icon: Icons.remove_red_eye,
+                text: 'Monitor Alat',
                 onTap: () {
-                  Navigator.push(context,
-                      new MaterialPageRoute(builder: (context) => Scan()));
+                  _pushPage(context, Monitor());
                 }),
             _createDrawerItem(
-                icon: Icons.note,
-                text: 'Notes',
+                icon: Icons.switch_left,
+                text: 'Kontrol Alat',
                 onTap: () {
-                  Navigator.pop(context);
+                  _pushPage(context, Control());
                 }),
+            _createDrawerItem(
+                icon: Icons.bar_chart,
+                text: 'Statistik Penggunaan',
+                onTap: () {
+                  _pushPage(context, Statistic());
+                }),
+            _createDrawerItem(
+                icon: Icons.wysiwyg_sharp,
+                text: 'Latihan Api',
+                onTap: () {
+                  _pushPage(context, Latapi());
+                }),
+            _createDrawerItem(
+                icon: Icons.wysiwyg_sharp,
+                text: 'Api Heroig',
+                onTap: () {
+                  _pushPage(context, ApiSaya());
+                }),
+            Divider(),
+            _createDrawerItem(
+                icon: Icons.outbox,
+                text: 'Keluar Akun',
+                onTap: () {
+                  context.read<AuthServices>().signOut();
+                })
           ],
         ),
       ),
@@ -93,6 +117,7 @@ class _HomeState extends State<Home> {
 }
 
 void _pushPage(BuildContext context, Widget page) {
+  Navigator.of(context).pop();
   Navigator.of(context).push(
     MaterialPageRoute<void>(builder: (_) => page),
   );

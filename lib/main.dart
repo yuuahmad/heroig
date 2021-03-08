@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:heroig/pages/login_page.dart';
 import 'package:heroig/pages/main_page.dart';
 import 'package:provider/provider.dart';
-import 'pages/auth_services.dart';
+import 'services/auth_services.dart';
 
 Future main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
