@@ -41,7 +41,7 @@ dependencies:
   provider: ^4.3.3
   syncfusion_flutter_gauges: ^18.4.44
   http: ^0.12.2
-
+  fl_chart: ^0.20.1
 
 dev_dependencies:
   flutter_test:

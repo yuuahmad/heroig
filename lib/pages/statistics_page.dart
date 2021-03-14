@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class Statistic extends StatefulWidget {
@@ -17,17 +18,7 @@ class _StatisticState extends State<Statistic> {
       body: Center(
         child: SingleChildScrollView(
           child: Column(
-            children: [
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                width: double.infinity,
-                padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5), color: Colors.blue),
-                child: Text('hai yang disana'),
-              ),
-              Boxsaya('coba saya')
-            ],
+            children: [Boxsaya('coba saya')],
           ),
         ),
       ),
@@ -41,12 +32,22 @@ class Boxsaya extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
-      width: double.infinity,
-      padding: EdgeInsets.all(20),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5), color: Colors.blue),
-      child: Text(judulteks),
-    );
+        margin: EdgeInsets.all(10),
+        width: double.infinity,
+        padding: EdgeInsets.all(20),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5), color: Colors.blue),
+        child: Container(
+          color: const Color(0xff232040),
+          child: Center(
+            child: Padding(
+                padding: const EdgeInsets.all(28.0),
+                child: Container(
+                  width: 100,
+                  height: 20,
+                  color: Colors.black,
+                )),
+          ),
+        ));
   }
 }
