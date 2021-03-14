@@ -1,29 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
-/// Represents the Monitor class
-class Monitor extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Radial Gauge Demo',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: MyHomePage(),
-    );
-  }
-}
-
-/// Represents MyHomePage class
-class MyHomePage extends StatefulWidget {
-  /// Creates the instance of MyHomePage
+/// Represents Monitor class
+class Monitor extends StatefulWidget {
+  /// Creates the instance of Monitor
   // ignore: prefer_const_constructors_in_immutables
-  MyHomePage({Key key}) : super(key: key);
+  Monitor({Key key}) : super(key: key);
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MonitorState createState() => _MonitorState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MonitorState extends State<Monitor> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
